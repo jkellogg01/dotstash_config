@@ -1,1 +1,1 @@
-{"author":"sowing","url":"","branch":"","targets":null}
+{"author":"sowing","url":"","branch":"","targets":[{"src":"#dst/dotstash/awesome","dst":"#cfg/awesome"},{"src":"#dst/dotstash/wezterm","dst":"#cfg/wezterm"}]}
