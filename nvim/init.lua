@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
@@ -8,9 +8,8 @@ vim.opt.relativenumber = true
 
 vim.opt.showmode = false
 
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
--- one of not many things that I genuinely do not understand in here
 vim.opt.breakindent = true
 
 vim.opt.undofile = true
@@ -18,7 +17,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 250
 
@@ -32,12 +31,12 @@ vim.opt.splitbelow = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = '> ',
-	trail = '*',
+	tab = "> ",
+	trail = "*",
 }
 
 -- haven't actually noticed the difference with this but I like it in theory
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 vim.opt.cursorline = true
 
@@ -53,39 +52,34 @@ vim.opt.hlsearch = false
 -- THUS BEGINS THE KEYMAPS PART
 
 local function callbackExplore(dir)
-		return function()
-				vim.cmd { cmd = 'Explore', args = { dir } }
-		end
+	return function()
+		vim.cmd({ cmd = "Explore", args = { dir } })
+	end
 end
 
-vim.keymap.set('n', '<leader>xf', callbackExplore(), { desc = 'E[x]plore [F]iles' })
-vim.keymap.set('n', '<leader>xp', callbackExplore(vim.fn.getcwd()), { desc = 'E[x]plore [P]roject' })
-vim.keymap.set('n', '<leader>xn', callbackExplore(vim.fn.stdpath 'config'), { desc = 'E[x]plore [N]eovim' })
+vim.keymap.set("n", "<leader>xf", callbackExplore(), { desc = "E[x]plore [F]iles" })
+vim.keymap.set("n", "<leader>xp", callbackExplore(vim.fn.getcwd()), { desc = "E[x]plore [P]roject" })
+vim.keymap.set("n", "<leader>xn", callbackExplore(vim.fn.stdpath("config")), { desc = "E[x]plore [N]eovim" })
 
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- prevent sillies from using arrow keys
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- THUS BEGINS THE AUTOCOMMANDS PART
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-		desc = 'Highlight when yanking text',
-		group = vim.api.nvim_create_augroup('hl-yank', { clear = true }),
-		callback = function()
-				vim.highlight.on_yank()
-		end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking text",
+	group = vim.api.nvim_create_augroup("hl-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-		local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-		vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end ---@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
+require("config.lazy")
