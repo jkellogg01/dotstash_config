@@ -55,7 +55,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/sowing/.config/awesome/default/theme.lua")
+local current_theme = os.getenv('THEME') or 'nord'
+beautiful.init('~/.config/awesome/themes/' .. current_theme .. '/theme.lua')
 
 -- This is used later as the default terminal and editor to run.
 terminal = "wezterm"
