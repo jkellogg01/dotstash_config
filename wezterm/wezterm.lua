@@ -11,7 +11,7 @@ config.color_scheme = "nord"
 config.font_size = 16.0
 config.font = wezterm.font("Iosevka")
 config.enable_tab_bar = true
--- config.window_background_opacity = 0.85
+config.window_background_opacity = 0.85
 
 -- tab bar
 config.tab_bar_at_bottom = true

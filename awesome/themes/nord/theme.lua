@@ -51,12 +51,12 @@ theme.bg_urgent = colors.polar_night.bright
 theme.bg_minimize = theme.bg_normal
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = colors.frost.subtle
+theme.fg_normal = colors.snow_storm.bright
 theme.fg_focus = colors.frost.bright
 theme.fg_urgent = colors.aurora.red
 theme.fg_minimize = colors.frost.dark
 
-theme.useless_gap = dpi(5)
+theme.useless_gap = dpi(10)
 theme.border_width = dpi(1)
 theme.border_normal = colors.frost.subtle
 theme.border_focus = colors.frost.bright
