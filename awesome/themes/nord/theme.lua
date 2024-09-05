@@ -19,30 +19,30 @@ theme.font_h3 = theme.font_name .. " " .. tostring(dpi(18))
 theme.font = theme.font_h1
 
 local colors = {
-    polar_night = {
-        base = '#2E3440',
-        focus = '#3B4252',
-        highlight = '#434C5E',
-        bright = '#4C566A',
-    },
-    snow_storm = {
-        subtle = '#D8DEE9',
-        focus = '#E5E9F0',
-        bright = '#ECEFF4',
-    },
-    frost = {
-        calm = '#8FBCBB',
-        bright = '#88C0D0',
-        subtle = '#81A1C1',
-        dark = '#5E81AC',
-    },
-    aurora = {
-        red = '#BF616A',
-        orange = '#D08770',
-        yellow = '#EBCB8B',
-        green = '#A3BE8C',
-        violet = '#B48EAD',
-    },
+	polar_night = {
+		base = "#2E3440",
+		focus = "#3B4252",
+		highlight = "#434C5E",
+		bright = "#4C566A",
+	},
+	snow_storm = {
+		subtle = "#D8DEE9",
+		focus = "#E5E9F0",
+		bright = "#ECEFF4",
+	},
+	frost = {
+		calm = "#8FBCBB",
+		bright = "#88C0D0",
+		subtle = "#81A1C1",
+		dark = "#5E81AC",
+	},
+	aurora = {
+		red = "#BF616A",
+		orange = "#D08770",
+		yellow = "#EBCB8B",
+		green = "#A3BE8C",
+		violet = "#B48EAD",
+	},
 }
 
 theme.bg_normal = colors.polar_night.base
@@ -56,7 +56,7 @@ theme.fg_focus = colors.frost.bright
 theme.fg_urgent = colors.aurora.red
 theme.fg_minimize = colors.frost.dark
 
-theme.useless_gap = dpi(10)
+theme.useless_gap = dpi(8)
 theme.border_width = dpi(1)
 theme.border_normal = colors.frost.subtle
 theme.border_focus = colors.frost.bright
@@ -125,7 +125,8 @@ theme.titlebar_maximized_button_focus_inactive = themes_path .. "default/titleba
 theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path .. "default/background.png"
+-- TODO: there's gotta be a nicer way of doing this but this is fine for now
+theme.wallpaper = "~/Pictures/Backgrounds/nord-firewatch.jpg" or themes_path .. "default/background.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"
