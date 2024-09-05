@@ -46,10 +46,10 @@ local colors = {
 }
 
 theme.bg_normal = colors.polar_night.base
-theme.bg_focus = colors.polar_night.focus
+theme.bg_focus = colors.polar_night.highlight
 theme.bg_urgent = colors.polar_night.bright
-theme.bg_minimize = theme.bg_normal
-theme.bg_systray = theme.bg_normal
+theme.bg_minimize = colors.polar_night.focus
+theme.bg_systray = colors.polar_night.focus
 
 theme.fg_normal = colors.snow_storm.bright
 theme.fg_focus = colors.frost.bright
