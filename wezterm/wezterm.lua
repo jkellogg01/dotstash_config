@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 -- styling
-config.color_scheme = "rose-pine"
+config.color_scheme = "nord"
 config.font_size = 16.0
 config.font = wezterm.font("Iosevka")
 config.enable_tab_bar = true
