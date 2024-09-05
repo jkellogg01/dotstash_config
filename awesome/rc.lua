@@ -56,7 +56,6 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/sowing/.config/awesome/default/theme.lua")
-beautiful.font = beautiful.get_font("Iosevka")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "wezterm"
