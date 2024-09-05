@@ -1,1 +1,1 @@
-{"author":"sowing","url":"","branch":"","targets":[{"src":"#dst/dotstash/awesome","dst":"#cfg/awesome"},{"src":"#dst/dotstash/wezterm","dst":"#cfg/wezterm"}]}
+{"author":"sowing","url":"","branch":"","targets":[{"src":"#dst/dotstash/awesome","dst":"#cfg/awesome"},{"src":"#dst/dotstash/wezterm","dst":"#cfg/wezterm"},{"src":"#dst/dotstash/nvim","dst":"#cfg/nvim"}]}
