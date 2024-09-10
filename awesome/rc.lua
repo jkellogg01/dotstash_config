@@ -55,8 +55,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-local current_theme = os.getenv('THEME') or 'nord'
-beautiful.init('~/.config/awesome/themes/' .. current_theme .. '/theme.lua')
+local current_theme = os.getenv("THEME") or "nord"
+beautiful.init("~/.config/awesome/themes/" .. current_theme .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "wezterm"
@@ -73,9 +73,9 @@ modkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layout = awful.layout.suit
 awful.layout.layouts = {
-		layout.tile,
-		layout.spiral.dwindle,
-		layout.floating,
+	layout.tile,
+	layout.spiral.dwindle,
+	layout.floating,
 }
 --[[
 awful.layout.layouts = {
@@ -376,7 +376,19 @@ globalkeys = gears.table.join(
 	-- Menubar
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awesome.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%")
+	end, { description = "increase volume", group = "audio" }),
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awesome.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%")
+	end, { description = "decrease volume", group = "audio" }),
+	awful.key({}, "XF86AudioMute", function()
+		awesome.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+	end, { description = "mute audio output", group = "audio" }),
+	awful.key({}, "XF86AudioMicMute", function()
+		awesome.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle")
+	end, { description = "mute audio input", group = "audio" })
 )
 
 clientkeys = gears.table.join(
