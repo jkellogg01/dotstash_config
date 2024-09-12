@@ -1,1 +1,1 @@
-{"author":"sowing","url":"","branch":"","targets":[{"src":"#dst/awesome","dst":"#cfg/awesome"},{"src":"#dst/wezterm","dst":"#cfg/wezterm"},{"src":"#dst/nvim","dst":"#cfg/nvim"},{"src":"#dst/Backgrounds","dst":"#hom/Pictures/Backgrounds"}]}
+{"Name":"dotstash_config","author":"sowing","url":"","branch":"","targets":[{"src":"#dst/awesome","dst":"#cfg/awesome"},{"src":"#dst/wezterm","dst":"#cfg/wezterm"},{"src":"#dst/nvim","dst":"#cfg/nvim"},{"src":"#dst/Backgrounds","dst":"#hom/Pictures/Backgrounds"},{"src":"#dst/alacritty","dst":"#cfg/alacritty"}]}
