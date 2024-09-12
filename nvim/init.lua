@@ -49,6 +49,12 @@ vim.opt.tabstop = 4
 
 vim.opt.hlsearch = false
 
+vim.filetype.add({
+	pattern = {
+		[".*%blade%.php"] = "blade",
+	},
+})
+
 -- THUS BEGINS THE KEYMAPS PART
 
 local function callbackExplore(dir)
@@ -61,8 +67,8 @@ vim.keymap.set("n", "<leader>xf", callbackExplore(), { desc = "E[x]plore [F]iles
 vim.keymap.set("n", "<leader>xp", callbackExplore(vim.fn.getcwd()), { desc = "E[x]plore [P]roject" })
 vim.keymap.set("n", "<leader>xn", callbackExplore(vim.fn.stdpath("config")), { desc = "E[x]plore [N]eovim" })
 
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "[d", vim.diagnostic.get_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.get_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 

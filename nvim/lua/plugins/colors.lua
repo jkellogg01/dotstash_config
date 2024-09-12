@@ -1,10 +1,4 @@
 return {
-	{
-		"arcticicestudio/nord-vim",
-		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme("nord")
-		end,
-	},
+	"arcticicestudio/nord-vim",
 	"Mofiqul/dracula.nvim",
 }

@@ -147,6 +147,7 @@ return {
 				elixirls = {},
 				dockerls = {},
 				emmet_ls = {},
+				intelephense = {},
 				--
 
 				lua_ls = {
